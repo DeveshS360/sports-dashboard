@@ -7,10 +7,12 @@ import footballUrl1 from 'assets/images/football-match1.jpeg'
 import footballUrl2 from 'assets/images/football-match2.jpeg'
 import footballUrl3 from 'assets/images/football-match3.jpeg'
 import footballUrl4 from 'assets/images/football-match4.jpeg'
+import { ProfileSection } from '../ProfileSection'
 
 export const SideInfo = () => {
   return (
     <StyledSideInfoContainer>
+      <ProfileSection />
       <LiveMatch
         description="Description about the match"
         teams={[

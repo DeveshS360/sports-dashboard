@@ -5,7 +5,7 @@ export const StyledLiveMatchContainer = styled.div`
   padding: 40px;
   width: 100%;
   border-radius: var(--card-border-radius);
-  margin-bottom: var(--card-grid-gap-size);
+  margin: var(--card-grid-gap-size) 0;
 `
 
 export const StyledLiveMatchTitle = styled.div`
