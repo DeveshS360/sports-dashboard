@@ -32,7 +32,9 @@ export const MatchDetails = (props: MatchDetailsProps) => {
         </StyledMatchDetailsTeamIconContainer>
         <span>{teams?.[0]?.name}</span>
       </StyledMatchDetailsTeam>
-      <StyledMatchScore>2 : 4</StyledMatchScore>
+      <StyledMatchScore>
+        {teams?.[0]?.score} : {teams?.[1]?.score}
+      </StyledMatchScore>
       <StyledMatchDetailsTeam>
         <StyledMatchDetailsTeamIconContainer>
           <img src={teams?.[1]?.imageUrl} alt="" />

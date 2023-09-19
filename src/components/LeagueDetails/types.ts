@@ -9,6 +9,7 @@ export interface MatchDetailsProps {
   }[]
 }
 export interface LeagueDetailsProps {
+  leagueId: string
   matches: MatchDetailsProps[]
   name: string
   leagueFullName: string
