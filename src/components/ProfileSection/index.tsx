@@ -12,12 +12,7 @@ export const ProfileSection = () => {
         notificationCount={3}
       />
       <RoundButton icon={<SettingOutlined style={iconStyle} />} />
-      <User
-        firstName="Devesh"
-        lastName="Sharma"
-        country="India"
-        city="Bengaluru"
-      />
+      <User />
     </StyledProfileContainer>
   )
 }

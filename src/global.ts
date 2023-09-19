@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
         }
     }
 
+    button {
+        cursor: pointer;
+    }
+
     #root {
         font-family: sans-serif;
         --bg-color-primary: black;

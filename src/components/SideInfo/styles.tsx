@@ -1,6 +1,8 @@
 import { styled } from 'styled-components'
 
 export const StyledSideInfoContainer = styled.aside`
-  width: 350px;
+  flex: 1;
+  min-width: 330px;
   margin: 0 var(--card-grid-gap-size);
+  margin-top: 20px;
 `

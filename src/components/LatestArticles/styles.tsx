@@ -24,7 +24,7 @@ export const StyledArticleContentContainer = styled.div`
 export const StyledArticleContent = styled.div`
   display: flex;
   align-items: center;
-  gap: 0px 8px;
+  gap: 0px 10px;
 `
 
 export const StyledArticleImage = styled.img`
@@ -33,13 +33,14 @@ export const StyledArticleImage = styled.img`
   border-radius: 10px;
 `
 
-export const StyledArticlePrimaryText = styled.p`
+export const StyledArticlePrimaryText = styled.div`
   color: var(--text-color-primary);
   font-size: 14px;
+  margin-bottom: 10px;
 `
 
 export const StyledArticleSecondaryText = styled.div`
   color: var(--text-color-secondary);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: lighter;
 `
