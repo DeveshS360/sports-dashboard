@@ -20,13 +20,13 @@ export const LiveMatch = (props: LiveMatchProps) => {
       <StyledLiveMatchDescription>{description}</StyledLiveMatchDescription>
       <StyledLiveMatchDetailsContainer>
         <StyledLiveMatchTeamContainer>
-          <StyledLiveMatchTeam src={teams[0].imageUrl} />
-          <StyledLiveMatchTeamName>{teams[0].name}</StyledLiveMatchTeamName>
+          <StyledLiveMatchTeam src={teams?.[0]?.imageUrl} />
+          <StyledLiveMatchTeamName>{teams?.[0]?.name}</StyledLiveMatchTeamName>
         </StyledLiveMatchTeamContainer>
-        <StyledLiveMatchScore>{`${teams[0].score} : ${teams[1].score}`}</StyledLiveMatchScore>
+        <StyledLiveMatchScore>{`${teams?.[0]?.score} : ${teams?.[1]?.score}`}</StyledLiveMatchScore>
         <StyledLiveMatchTeamContainer>
-          <StyledLiveMatchTeam src={teams[1].imageUrl} />
-          <StyledLiveMatchTeamName>{teams[1].name}</StyledLiveMatchTeamName>
+          <StyledLiveMatchTeam src={teams?.[1]?.imageUrl} />
+          <StyledLiveMatchTeamName>{teams?.[1]?.name}</StyledLiveMatchTeamName>
         </StyledLiveMatchTeamContainer>
       </StyledLiveMatchDetailsContainer>
       <StyledLiveMatchDetailCta>Match Detail</StyledLiveMatchDetailCta>

@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
         --text-color-primary: white;
         --text-color-secondary: lightgray;
         --purple: #581f7c;
+        --card-border-radius: 15px;
+        --card-grid-gap-size: 30px;
     }
 
 `

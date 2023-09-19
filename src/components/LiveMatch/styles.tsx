@@ -4,7 +4,8 @@ export const StyledLiveMatchContainer = styled.div`
   background: var(--bg-color-secondary);
   padding: 40px;
   width: 100%;
-  border-radius: 15px;
+  border-radius: var(--card-border-radius);
+  margin-bottom: var(--card-grid-gap-size);
 `
 
 export const StyledLiveMatchTitle = styled.div`
@@ -44,7 +45,7 @@ export const StyledLiveMatchTeam = styled.img`
 `
 
 export const StyledLiveMatchScore = styled.div`
-  padding: 8px 10px;
+  padding: 8px 15px;
   color: var(--text-color-primary);
   background: rgb(80, 75, 75);
   font-weight: bold;
