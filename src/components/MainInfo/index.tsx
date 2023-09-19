@@ -7,6 +7,7 @@ import {
 import { FACT_OF_THE_DAY } from 'src/constants/data/fact'
 import { AdvertisedMatch } from '../AdvertisedMatch'
 import versusUrl from 'assets/images/versus.png'
+import { LeagueList } from '../LeagueList'
 
 export const MainInfo = () => {
   const { lastName } = USER_INFO
@@ -22,6 +23,7 @@ export const MainInfo = () => {
         venue="Old Trafford Stadium"
         versusImgUrl={versusUrl}
       />
+      <LeagueList />
     </StyledMainContainer>
   )
 }

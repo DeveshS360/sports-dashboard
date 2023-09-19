@@ -1,8 +1,7 @@
 import { styled } from 'styled-components'
 
 export const StyledMainContainer = styled.div`
-  padding: 40px;
-  padding-right: 0;
+  padding: 25px 0 40px 40px;
   flex: 2.5;
 `
 

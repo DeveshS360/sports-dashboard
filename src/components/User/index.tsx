@@ -1,4 +1,3 @@
-import { DownOutlined } from '@ant-design/icons'
 import {
   StyledArticleContent,
   StyledArticleSecondaryText,
@@ -7,6 +6,7 @@ import {
 import { StyledUserAvatar, StyledUserContainer } from './styles'
 import userImage from 'assets/images/person.jpeg'
 import { USER_INFO } from 'src/constants/data/user'
+import { DownArrow } from '../DownArrow'
 
 export const User = () => {
   const { firstName, lastName, country, city } = USER_INFO
@@ -20,9 +20,7 @@ export const User = () => {
           <StyledArticleSecondaryText>{`${city}, ${country}`}</StyledArticleSecondaryText>
         </div>
       </StyledArticleContent>
-      <DownOutlined
-        style={{ color: 'white', fontSize: 15, transform: 'scaleX(1.5)' }}
-      />
+      <DownArrow />
     </StyledUserContainer>
   )
 }
