@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 
 export const StyledSideInfoContainer = styled.aside`
-  flex: 1.5;
+  width: 350px;
+  margin: 0 var(--card-grid-gap-size);
 `

@@ -1,9 +1,9 @@
 import {
   StyledArticleContent,
   StyledArticleContentContainer,
-  StyledArticleDate,
+  StyledArticleSecondaryText,
   StyledArticleImage,
-  StyledArticleText,
+  StyledArticlePrimaryText,
   StyledArticlesContainer,
   StyledArticlesHeading,
 } from './styles'
@@ -19,8 +19,12 @@ export const LatestArticles = (props: LatestArticleProps) => {
           <StyledArticleContent key={idx}>
             <StyledArticleImage src={article?.imageUrl} />
             <div>
-              <StyledArticleText>{article?.news}</StyledArticleText>
-              <StyledArticleDate>{article.date}</StyledArticleDate>
+              <StyledArticlePrimaryText>
+                {article?.news}
+              </StyledArticlePrimaryText>
+              <StyledArticleSecondaryText>
+                {article.date}
+              </StyledArticleSecondaryText>
             </div>
           </StyledArticleContent>
         ))}

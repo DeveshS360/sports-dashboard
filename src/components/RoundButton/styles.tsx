@@ -1,8 +1,8 @@
 import { styled } from 'styled-components'
 
 export const StyledRoundButton = styled.button`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,8 +13,8 @@ export const StyledRoundButton = styled.button`
 `
 
 export const StyledBadge = styled(StyledRoundButton)`
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   font-size: 10px;
   color: var(--text-color-primary);
   position: absolute;

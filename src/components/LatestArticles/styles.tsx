@@ -33,12 +33,12 @@ export const StyledArticleImage = styled.img`
   border-radius: 10px;
 `
 
-export const StyledArticleText = styled.p`
+export const StyledArticlePrimaryText = styled.p`
   color: var(--text-color-primary);
   font-size: 14px;
 `
 
-export const StyledArticleDate = styled.div`
+export const StyledArticleSecondaryText = styled.div`
   color: var(--text-color-secondary);
   font-size: 10px;
   font-weight: lighter;
