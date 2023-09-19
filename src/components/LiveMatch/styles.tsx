@@ -51,6 +51,7 @@ export const StyledLiveMatchScore = styled.div`
   font-weight: bold;
   font-size: 18px;
   border-radius: 30px;
+  flex-shrink: 0;
 `
 
 export const StyledLiveMatchDetailCta = styled.button`
