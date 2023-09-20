@@ -8,7 +8,6 @@ export const StyledNavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   bottom: 0;
-  overflow-y: auto;
 `
 
 export const StyledNavbarHeader = styled.header`

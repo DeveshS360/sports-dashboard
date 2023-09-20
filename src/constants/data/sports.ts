@@ -6,7 +6,7 @@ import {
 import { BASKETBALL_FACT_OF_THE_DAY, FOOTBALL_FACT_OF_THE_DAY } from './fact'
 import { BASKETBALL_LEAGUES, FOOTBALL_LEAGUES } from './league'
 import { BASKETBALL_LIVE_MATCH, FOOTBALL_LIVE_MATCH } from './liveMatch'
-import { FOOTBALL_NEWS_ARTICLES } from './news'
+import { BASKETBALL_NEWS_ARTICLES, FOOTBALL_NEWS_ARTICLES } from './news'
 
 export const SPORTS_DATA: Record<string, SportData> = {
   football: {
@@ -22,15 +22,15 @@ export const SPORTS_DATA: Record<string, SportData> = {
     sportName: 'basketball',
     fact: BASKETBALL_FACT_OF_THE_DAY,
     advertisedMatch: BASKETBALL_ADVERTISED_MATCH,
-    articles: FOOTBALL_NEWS_ARTICLES,
+    articles: BASKETBALL_NEWS_ARTICLES,
     liveMatch: BASKETBALL_LIVE_MATCH,
     leagues: BASKETBALL_LEAGUES,
   },
 
   volleyball: {
-    sportName: 'basketball',
-    fact: BASKETBALL_FACT_OF_THE_DAY,
-    advertisedMatch: BASKETBALL_ADVERTISED_MATCH,
+    sportName: 'volleyball',
+    fact: FOOTBALL_FACT_OF_THE_DAY,
+    advertisedMatch: FOOTBALL_ADVERTISED_MATCH,
     articles: FOOTBALL_NEWS_ARTICLES,
     liveMatch: FOOTBALL_LIVE_MATCH,
     leagues: FOOTBALL_LEAGUES,

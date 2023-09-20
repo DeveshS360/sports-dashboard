@@ -4,7 +4,7 @@ export const StyledArticlesContainer = styled.article`
   padding: 24px;
   background: var(--bg-color-secondary);
   border-radius: var(--card-border-radius);
-  max-height: 500px;
+  max-height: 480px;
   overflow-y: auto;
 `
 

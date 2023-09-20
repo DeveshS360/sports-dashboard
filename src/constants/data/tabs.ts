@@ -3,6 +3,10 @@ import { TabsProps } from 'src/components/Tabs/types'
 import footballIUrl from 'assets/images/football.png'
 import basketballUrl from 'assets/images/basketball.png'
 import volleyballUrl from 'assets/images/volleyball.jpeg'
+import premierLeagueUrl from 'assets/images/football-premier-league.jpeg'
+import bundesLigaUrl from 'assets/images/bundesliga.png'
+import lbaLeagueUrl from 'assets/images/basketball-lba.png'
+import balLeagueUrl from 'assets/images/basketball-bal.jpeg'
 
 export const MAIN_TABS: TabsProps = {
   defaultActiveTabId: 'football',
@@ -20,12 +24,12 @@ export const MAIN_TABS: TabsProps = {
         {
           id: 'bundesliga',
           title: 'Bundes Liga',
-          tabIcon: laLigaUrl,
+          tabIcon: bundesLigaUrl,
         },
         {
           id: 'premier',
           title: 'Premier League',
-          tabIcon: laLigaUrl,
+          tabIcon: premierLeagueUrl,
         },
       ],
     },
@@ -33,6 +37,18 @@ export const MAIN_TABS: TabsProps = {
       id: 'basketball',
       title: 'Basketball',
       tabIcon: basketballUrl,
+      tabContent: [
+        {
+          id: 'lba',
+          title: 'LBA League',
+          tabIcon: lbaLeagueUrl,
+        },
+        {
+          id: 'bal',
+          title: 'Bal League',
+          tabIcon: balLeagueUrl,
+        },
+      ],
     },
     {
       id: 'volleyball',

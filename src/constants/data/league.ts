@@ -7,6 +7,7 @@ import lbaLeagueUrl from 'assets/images/basketball-lba.png'
 import balLeagueUrl from 'assets/images/basketball-bal.jpeg'
 import chicagoBullsUrl from 'assets/images/chicago-bulls.png'
 import bostonCelticsUrl from 'assets/images/boston-celtics.png'
+import bundesLigaUrl from 'assets/images/bundesliga.png'
 
 export const FOOTBALL_LEAGUES: LeagueDetailsProps[] = [
   {
@@ -55,9 +56,9 @@ export const FOOTBALL_LEAGUES: LeagueDetailsProps[] = [
 
   {
     leagueId: 'flb',
-    name: 'Premier League',
-    leagueFullName: 'English Premier League',
-    imageUrl: premierLeagueUrl,
+    name: 'Bundesliga',
+    leagueFullName: 'Bundes Liga League',
+    imageUrl: bundesLigaUrl,
 
     matches: [
       {
@@ -98,50 +99,6 @@ export const FOOTBALL_LEAGUES: LeagueDetailsProps[] = [
   },
   {
     leagueId: 'flc',
-    name: 'La Liga',
-    leagueFullName: 'Spanish La Liga',
-    imageUrl: laLigaUrl,
-
-    matches: [
-      {
-        matchId: 'a',
-        duration: 88,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 1,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
-            score: 3,
-          },
-        ],
-      },
-      {
-        matchId: 'b',
-        duration: 70,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 2,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
-            score: 3,
-          },
-        ],
-      },
-    ],
-  },
-
-  {
-    leagueId: 'fld',
     name: 'Premier League',
     leagueFullName: 'English Premier League',
     imageUrl: premierLeagueUrl,
@@ -267,93 +224,6 @@ export const BASKETBALL_LEAGUES: LeagueDetailsProps[] = [
           {
             name: 'Boston Celtics',
             imageUrl: bostonCelticsUrl,
-            score: 5,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    leagueId: 'blc',
-    name: 'LBA League',
-    leagueFullName: 'Liberia Basketball Association',
-    imageUrl: lbaLeagueUrl,
-
-    matches: [
-      {
-        matchId: 'a',
-        duration: 88,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 1,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
-            score: 3,
-          },
-        ],
-      },
-      {
-        matchId: 'b',
-        duration: 70,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 2,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
-            score: 3,
-          },
-        ],
-      },
-    ],
-  },
-
-  {
-    leagueId: 'lbd',
-    name: 'BAL League',
-    leagueFullName: 'Basketball African League',
-    imageUrl: balLeagueUrl,
-
-    matches: [
-      {
-        matchId: 'a',
-        duration: 88,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 2,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
-            score: 5,
-          },
-        ],
-      },
-      {
-        matchId: 'b',
-        duration: 70,
-        isStarred: false,
-        teams: [
-          {
-            name: 'Barcelona',
-            imageUrl: barcelonaUrl,
-            score: 2,
-          },
-          {
-            name: 'Manchester United',
-            imageUrl: mUnitedUrl,
             score: 5,
           },
         ],
