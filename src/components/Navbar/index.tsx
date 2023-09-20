@@ -12,14 +12,17 @@ import heartIcon from 'assets/images/heart.png'
 import { useAppSelector } from 'src/redux/hooks'
 import { useDispatch } from 'react-redux'
 import { setActiveSportsData } from 'src/redux/slices/SportsSlice'
-import { SPORTS_DATA } from 'src/constants/data/sports'
 import callSupportIcon from 'assets/images/call-support.jpeg'
 
 export const Navbar = () => {
   const sportsTabData = useAppSelector((state) => state.sportsStore.tabData)
+  const sportsDetailMap = useAppSelector(
+    (state) => state.sportsStore.sportsDetailsMap
+  )
   const dispatch = useDispatch()
   const handleTabChange = (tabName: string) => {
-    dispatch(setActiveSportsData(SPORTS_DATA[tabName]))
+    // if data not available do an API call
+    dispatch(setActiveSportsData(sportsDetailMap[tabName]))
   }
   return (
     <StyledNavbarContainer>

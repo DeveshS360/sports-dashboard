@@ -20,6 +20,7 @@ export const sportsSlice = createSlice({
   reducers: {
     setActiveSportsData: (state, action) => {
       state.activeSportData = action.payload
+      state.sportsDetailsMap[action.payload.sportName] = action.payload
     },
     starOrUnstarLeagueMatch: (state, action) => {
       const { matchId, leagueId } = action.payload
@@ -40,6 +41,10 @@ export const sportsSlice = createSlice({
         state.activeSportData.leagues[leagueIdx].matches[matchIdx].isStarred
       state.activeSportData.leagues[leagueIdx].matches[matchIdx].isStarred =
         !starValue
+
+      state.sportsDetailsMap[state.activeSportData.sportName] = {
+        ...state.activeSportData,
+      }
     },
   },
 })

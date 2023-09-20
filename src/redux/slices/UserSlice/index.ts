@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: UserStore = {
   user: { ...USER_INFO },
+  notifications: 4,
 }
 
 export const userSlice = createSlice({
