@@ -34,9 +34,11 @@ export const TabItem = (props: TabProps) => {
     <>
       <StyledTabItem isSelected={isActive} onClick={handleClick}>
         <TextWithIcon iconUrl={tabIcon} text={title} />
-        <StyledDownArrowContainer isUp={!isOpen}>
-          <DownArrow />
-        </StyledDownArrowContainer>
+        {!!tabContent?.length && (
+          <StyledDownArrowContainer isUp={!isOpen}>
+            <DownArrow />
+          </StyledDownArrowContainer>
+        )}
       </StyledTabItem>
       {tabContent?.length && isOpen && (
         <StyledTabItemContentContainer>

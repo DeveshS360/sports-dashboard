@@ -8,6 +8,7 @@ export const StyledNavbarContainer = styled.nav`
   position: fixed;
   top: 0;
   bottom: 0;
+  overflow-y: auto;
 `
 
 export const StyledNavbarHeader = styled.header`
@@ -32,13 +33,13 @@ export const StyledNavbarCategory = styled.div`
 `
 
 export const StyledNavbarFooter = styled.footer`
-  position: absolute;
   display: flex;
   align-items: center;
   gap: 0px 10px;
   left: 30px;
   bottom: 40px;
   cursor: pointer;
+  position: absolute;
 
   * {
     color: rgb(209, 32, 62);

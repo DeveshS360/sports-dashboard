@@ -9,6 +9,7 @@ import {
 import navbarIcon from 'assets/images/rugby.png'
 import laLigaUrl from 'assets/images/football-la-liga.jpg'
 import { Tabs } from '../Tabs'
+import heartIcon from 'assets/images/heart.png'
 
 export const Navbar = () => {
   return (
@@ -52,6 +53,22 @@ export const Navbar = () => {
             id: 'c',
             title: 'Volleyball',
             tabIcon: navbarIcon,
+          },
+        ]}
+      />
+      <StyledNavbarCategory>Other Menu</StyledNavbarCategory>
+      <Tabs
+        defaultActiveTabId=""
+        tabs={[
+          {
+            id: 'fav',
+            title: 'Favourites',
+            tabIcon: heartIcon,
+          },
+          {
+            id: 'support',
+            title: 'Support',
+            tabIcon: heartIcon,
           },
         ]}
       />

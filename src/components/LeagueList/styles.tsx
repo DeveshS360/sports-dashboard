@@ -6,6 +6,7 @@ export const StyledMatchListContainer = styled.div`
   margin-top: var(--card-grid-gap-size);
   border-radius: var(--card-border-radius);
   max-height: 500px;
+  overflow-y: auto;
 `
 
 export const StyledMatchListTitle = styled.div`
