@@ -2,6 +2,7 @@ import { styled } from 'styled-components'
 
 export const StyledMainContainer = styled.div`
   padding: 25px 0 40px 40px;
+  margin-left: 350px;
   flex: 2.5;
 `
 
