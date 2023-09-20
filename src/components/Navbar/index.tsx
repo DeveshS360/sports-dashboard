@@ -7,9 +7,9 @@ import {
   StyledNavbarTitle,
 } from './styles'
 import navbarIcon from 'assets/images/rugby.png'
-import laLigaUrl from 'assets/images/football-la-liga.jpg'
 import { Tabs } from '../Tabs'
 import heartIcon from 'assets/images/heart.png'
+import { MAIN_TABS } from 'src/constants/data/tabs'
 
 export const Navbar = () => {
   return (
@@ -19,43 +19,7 @@ export const Navbar = () => {
         <StyledNavbarTitle>Sportia</StyledNavbarTitle>
       </StyledNavbarHeader>
       <StyledNavbarCategory>Sports</StyledNavbarCategory>
-      <Tabs
-        defaultActiveTabId="a"
-        tabs={[
-          {
-            id: 'a',
-            title: 'Football',
-            tabIcon: navbarIcon,
-            tabContent: [
-              {
-                id: 'aa',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-              {
-                id: 'ab',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-              {
-                id: 'ac',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-            ],
-          },
-          {
-            id: 'b',
-            title: 'Basketball',
-            tabIcon: navbarIcon,
-          },
-          {
-            id: 'c',
-            title: 'Volleyball',
-            tabIcon: navbarIcon,
-          },
-        ]}
-      />
+      <Tabs {...MAIN_TABS} />
       <StyledNavbarCategory>Other Menu</StyledNavbarCategory>
       <Tabs
         defaultActiveTabId=""
