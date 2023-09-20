@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DownArrow } from '../DownArrow'
 import { StyledDownArrowContainer } from '../LeagueDetails/styles'
 import { TabProps } from '../Tabs/types'
@@ -23,6 +23,10 @@ export const TabItem = (props: TabProps) => {
   const isActive = activeTabId === id
 
   const [isOpen, setIsOpen] = useState(isActive)
+
+  useEffect(() => {
+    setIsOpen(isActive)
+  }, [isActive])
 
   const handleClick = () => {
     setIsOpen((prev) => !prev)

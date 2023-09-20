@@ -7,11 +7,12 @@ import { TabsProps } from 'src/components/Tabs/types'
 export interface SportsStore {
   activeSportData: SportData
   tabData: TabsProps
+  sportsDetailsMap: Record<string, SportData>
   sports: string[]
 }
 
 export interface SportData {
-  sportName: string
+  sportName?: string
   fact: string
   leagues: LeagueDetailsProps[]
   liveMatch: LiveMatchProps

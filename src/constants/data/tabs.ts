@@ -1,6 +1,8 @@
-import navbarIcon from 'assets/images/rugby.png'
 import laLigaUrl from 'assets/images/football-la-liga.jpg'
 import { TabsProps } from 'src/components/Tabs/types'
+import footballIUrl from 'assets/images/football.png'
+import basketballUrl from 'assets/images/basketball.png'
+import volleyballUrl from 'assets/images/volleyball.jpeg'
 
 export const MAIN_TABS: TabsProps = {
   defaultActiveTabId: 'football',
@@ -8,7 +10,7 @@ export const MAIN_TABS: TabsProps = {
     {
       id: 'football',
       title: 'Football',
-      tabIcon: navbarIcon,
+      tabIcon: footballIUrl,
       tabContent: [
         {
           id: 'la-liga',
@@ -30,12 +32,12 @@ export const MAIN_TABS: TabsProps = {
     {
       id: 'basketball',
       title: 'Basketball',
-      tabIcon: navbarIcon,
+      tabIcon: basketballUrl,
     },
     {
       id: 'volleyball',
       title: 'Volleyball',
-      tabIcon: navbarIcon,
+      tabIcon: volleyballUrl,
     },
   ],
 }

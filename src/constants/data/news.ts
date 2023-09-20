@@ -3,7 +3,7 @@ import footballUrl2 from 'assets/images/football-match2.jpeg'
 import footballUrl3 from 'assets/images/football-match3.jpeg'
 import footballUrl4 from 'assets/images/football-match4.jpeg'
 
-export const NEWS_ARTICLES = [
+export const FOOTBALL_NEWS_ARTICLES = [
   {
     news: 'Messi fights with Ronaldo, public does not seem happy at all',
     date: 'July 7, 2020 10:14 AM',

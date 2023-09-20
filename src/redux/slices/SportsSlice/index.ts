@@ -1,22 +1,16 @@
 import { MAIN_TABS } from 'src/constants/data/tabs'
 import { SportsStore } from './types'
-import { FACT_OF_THE_DAY } from 'src/constants/data/fact'
-import { LEAGUES } from 'src/constants/data/league'
-import { LIVE_MATCH } from 'src/constants/data/liveMatch'
-import { NEWS_ARTICLES } from 'src/constants/data/news'
 import { createSlice } from '@reduxjs/toolkit'
-import { ADVERTISED_MATCH } from 'src/constants/data/advertisedMatch'
+import { SPORTS_DATA } from 'src/constants/data/sports'
 
 const initialState: SportsStore = {
   tabData: MAIN_TABS,
   sports: ['football', 'basketball', 'baseball'],
-  activeSportData: {
-    sportName: 'football',
-    fact: FACT_OF_THE_DAY,
-    leagues: LEAGUES,
-    liveMatch: LIVE_MATCH,
-    articles: NEWS_ARTICLES,
-    advertisedMatch: ADVERTISED_MATCH,
+  activeSportData: SPORTS_DATA.football,
+  sportsDetailsMap: {
+    football: SPORTS_DATA.football,
+    basketball: SPORTS_DATA.basketball,
+    volleyball: SPORTS_DATA.volleyball,
   },
 }
 
