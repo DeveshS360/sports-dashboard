@@ -1,3 +1,4 @@
+import { useAppSelector } from 'src/redux/hooks'
 import {
   StyledLiveMatchContainer,
   StyledLiveMatchDescription,
@@ -10,10 +11,12 @@ import {
   StyledLiveMatchTitle,
 } from './styles'
 
-import { LiveMatchProps } from './types'
+export const LiveMatch = () => {
+  const liveMatchDetails = useAppSelector(
+    (state) => state.sportsStore.activeSportData.liveMatch
+  )
 
-export const LiveMatch = (props: LiveMatchProps) => {
-  const { description, teams } = props
+  const { description, teams } = liveMatchDetails
   return (
     <StyledLiveMatchContainer>
       <StyledLiveMatchTitle>Live Matches</StyledLiveMatchTitle>

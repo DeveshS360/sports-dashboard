@@ -1,4 +1,4 @@
-import { LineChartOutlined, StarOutlined } from '@ant-design/icons'
+import { LineChartOutlined, StarFilled, StarOutlined } from '@ant-design/icons'
 import {
   StyledMatchDetailsContainer,
   StyledMatchDetailsDuration,
@@ -7,24 +7,38 @@ import {
   StyledMatchScore,
 } from './styles'
 import { MatchDetailsProps } from '../LeagueDetails/types'
+import { useDispatch } from 'react-redux'
+import { starOrUnstarLeagueMatch } from 'src/redux/slices/SportsSlice'
 
-export const MatchDetails = (props: MatchDetailsProps) => {
+export const MatchDetails = (
+  props: MatchDetailsProps & { matchLeagueId: string }
+) => {
+  const { teams, duration, isStarred, matchId, matchLeagueId } = props
+
+  const dispatch = useDispatch()
+
   const iconStyle = {
     fontSize: 20,
-    color: 'var(--text-color-secondary)',
     cursor: 'pointer',
+    color: 'var(--text-color-secondary',
   }
 
-  const { teams, duration } = props
+  const starIconStyle = {
+    ...iconStyle,
+    color: isStarred ? 'yellow' : 'var(--text-color-secondary)',
+  }
+
+  const handleStarClick = () => {
+    dispatch(starOrUnstarLeagueMatch({ matchId, leagueId: matchLeagueId }))
+  }
 
   return (
     <StyledMatchDetailsContainer>
-      <StarOutlined
-        style={iconStyle}
-        onClick={() => {
-          console.log('hello ')
-        }}
-      />
+      {isStarred ? (
+        <StarFilled style={starIconStyle} onClick={handleStarClick} />
+      ) : (
+        <StarOutlined style={starIconStyle} onClick={handleStarClick} />
+      )}
       <StyledMatchDetailsDuration>{duration}</StyledMatchDetailsDuration>
       <StyledMatchDetailsTeam>
         <StyledMatchDetailsTeamIconContainer>

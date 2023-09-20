@@ -1,7 +1,9 @@
+export interface Article {
+  imageUrl: string
+  date: string
+  news: string
+}
+
 export interface LatestArticleProps {
-  articles: {
-    imageUrl: string
-    date: string
-    news: string
-  }[]
+  articles: Article[]
 }

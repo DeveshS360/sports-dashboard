@@ -1,8 +1,9 @@
 import navbarIcon from 'assets/images/rugby.png'
 import laLigaUrl from 'assets/images/football-la-liga.jpg'
+import { TabsProps } from 'src/components/Tabs/types'
 
-export const MAIN_TABS = {
-  defaultActiveTabId: 'a',
+export const MAIN_TABS: TabsProps = {
+  defaultActiveTabId: 'football',
   tabs: [
     {
       id: 'football',

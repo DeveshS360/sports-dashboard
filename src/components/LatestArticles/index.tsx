@@ -1,3 +1,4 @@
+import { useAppSelector } from 'src/redux/hooks'
 import {
   StyledArticleContent,
   StyledArticleContentContainer,
@@ -7,10 +8,11 @@ import {
   StyledArticlesContainer,
   StyledArticlesHeading,
 } from './styles'
-import { LatestArticleProps } from './types'
 
-export const LatestArticles = (props: LatestArticleProps) => {
-  const { articles } = props
+export const LatestArticles = () => {
+  const articles = useAppSelector(
+    (state) => state.sportsStore.activeSportData.articles
+  )
   return (
     <StyledArticlesContainer>
       <StyledArticlesHeading>Latest Articles</StyledArticlesHeading>

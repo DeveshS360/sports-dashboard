@@ -9,9 +9,10 @@ import {
 import navbarIcon from 'assets/images/rugby.png'
 import { Tabs } from '../Tabs'
 import heartIcon from 'assets/images/heart.png'
-import { MAIN_TABS } from 'src/constants/data/tabs'
+import { useAppSelector } from 'src/redux/hooks'
 
 export const Navbar = () => {
+  const sportsTabData = useAppSelector((state) => state.sportsStore.tabData)
   return (
     <StyledNavbarContainer>
       <StyledNavbarHeader>
@@ -19,7 +20,7 @@ export const Navbar = () => {
         <StyledNavbarTitle>Sportia</StyledNavbarTitle>
       </StyledNavbarHeader>
       <StyledNavbarCategory>Sports</StyledNavbarCategory>
-      <Tabs {...MAIN_TABS} />
+      <Tabs {...sportsTabData} />
       <StyledNavbarCategory>Other Menu</StyledNavbarCategory>
       <Tabs
         defaultActiveTabId=""

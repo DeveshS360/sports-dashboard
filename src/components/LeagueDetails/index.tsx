@@ -15,7 +15,7 @@ import { LeagueDetailsProps } from './types'
 import { DownArrow } from '../DownArrow'
 
 export const LeagueDetails = (props: LeagueDetailsProps) => {
-  const { name, leagueFullName, matches, imageUrl } = props
+  const { name, leagueFullName, matches, imageUrl, leagueId } = props
 
   const [isCollapsed, setIsCollapsed] = useState(false)
 
@@ -41,7 +41,11 @@ export const LeagueDetails = (props: LeagueDetailsProps) => {
       {!isCollapsed && (
         <StyledLeagueMatchesContainer>
           {matches.map((match) => (
-            <MatchDetails key={match.matchId} {...match} />
+            <MatchDetails
+              key={match.matchId}
+              {...match}
+              matchLeagueId={leagueId}
+            />
           ))}
         </StyledLeagueMatchesContainer>
       )}
