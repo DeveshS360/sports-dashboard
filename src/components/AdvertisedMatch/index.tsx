@@ -11,10 +11,13 @@ import {
   StyledAdvertisedMatchTitle,
   StyledGetTicketArrow,
 } from './styles'
-import { AdvertisedMatchProps } from './types'
+import { useAppSelector } from 'src/redux/hooks'
 
-export const AdvertisedMatch = (props: AdvertisedMatchProps) => {
-  const { team1, team2, date, venue, versusImgUrl } = props
+export const AdvertisedMatch = () => {
+  const advertisedMatchData = useAppSelector(
+    (state) => state.sportsStore.activeSportData.advertisedMatch
+  )
+  const { team1, team2, date, venue, versusImgUrl } = advertisedMatchData
   const iconStyle = { fontSize: 20, color: 'white' }
   return (
     <StyledAdvertisedMatchContainer>

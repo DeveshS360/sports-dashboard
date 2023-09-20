@@ -1,12 +1,15 @@
-import { LEAGUES } from 'src/constants/data/league'
 import { StyledMatchListContainer, StyledMatchListTitle } from './styles'
 import { LeagueDetails } from '../LeagueDetails'
+import { useAppSelector } from 'src/redux/hooks'
 
 export const LeagueList = () => {
+  const leagues = useAppSelector(
+    (state) => state.sportsStore.activeSportData.leagues
+  )
   return (
     <StyledMatchListContainer>
       <StyledMatchListTitle>{`Today's Matches`}</StyledMatchListTitle>
-      {LEAGUES.map((league) => (
+      {leagues.map((league) => (
         <LeagueDetails key={league.leagueId} {...league} />
       ))}
     </StyledMatchListContainer>

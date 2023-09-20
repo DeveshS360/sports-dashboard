@@ -7,10 +7,23 @@ import {
   StyledNavbarTitle,
 } from './styles'
 import navbarIcon from 'assets/images/rugby.png'
-import laLigaUrl from 'assets/images/football-la-liga.jpg'
 import { Tabs } from '../Tabs'
+import heartIcon from 'assets/images/heart.png'
+import { useAppSelector } from 'src/redux/hooks'
+import { useDispatch } from 'react-redux'
+import { setActiveSportsData } from 'src/redux/slices/SportsSlice'
+import callSupportIcon from 'assets/images/call-support.jpeg'
 
 export const Navbar = () => {
+  const sportsTabData = useAppSelector((state) => state.sportsStore.tabData)
+  const sportsDetailMap = useAppSelector(
+    (state) => state.sportsStore.sportsDetailsMap
+  )
+  const dispatch = useDispatch()
+  const handleTabChange = (tabName: string) => {
+    // if data not available do an API call
+    dispatch(setActiveSportsData(sportsDetailMap[tabName]))
+  }
   return (
     <StyledNavbarContainer>
       <StyledNavbarHeader>
@@ -18,40 +31,20 @@ export const Navbar = () => {
         <StyledNavbarTitle>Sportia</StyledNavbarTitle>
       </StyledNavbarHeader>
       <StyledNavbarCategory>Sports</StyledNavbarCategory>
+      <Tabs {...sportsTabData} onTabClick={handleTabChange} />
+      <StyledNavbarCategory>Other Menu</StyledNavbarCategory>
       <Tabs
-        defaultActiveTabId="a"
+        defaultActiveTabId=""
         tabs={[
           {
-            id: 'a',
-            title: 'Football',
-            tabIcon: navbarIcon,
-            tabContent: [
-              {
-                id: 'aa',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-              {
-                id: 'ab',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-              {
-                id: 'ac',
-                title: 'La Liga',
-                tabIcon: laLigaUrl,
-              },
-            ],
+            id: 'fav',
+            title: 'Favourites',
+            tabIcon: heartIcon,
           },
           {
-            id: 'b',
-            title: 'Basketball',
-            tabIcon: navbarIcon,
-          },
-          {
-            id: 'c',
-            title: 'Volleyball',
-            tabIcon: navbarIcon,
+            id: 'support',
+            title: 'Support',
+            tabIcon: callSupportIcon,
           },
         ]}
       />

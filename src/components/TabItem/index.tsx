@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DownArrow } from '../DownArrow'
 import { StyledDownArrowContainer } from '../LeagueDetails/styles'
 import { TabProps } from '../Tabs/types'
@@ -24,6 +24,10 @@ export const TabItem = (props: TabProps) => {
 
   const [isOpen, setIsOpen] = useState(isActive)
 
+  useEffect(() => {
+    setIsOpen(isActive)
+  }, [isActive])
+
   const handleClick = () => {
     setIsOpen((prev) => !prev)
     setActiveTabId(id)
@@ -34,9 +38,11 @@ export const TabItem = (props: TabProps) => {
     <>
       <StyledTabItem isSelected={isActive} onClick={handleClick}>
         <TextWithIcon iconUrl={tabIcon} text={title} />
-        <StyledDownArrowContainer isUp={!isOpen}>
-          <DownArrow />
-        </StyledDownArrowContainer>
+        {!!tabContent?.length && (
+          <StyledDownArrowContainer isUp={!isOpen}>
+            <DownArrow />
+          </StyledDownArrowContainer>
+        )}
       </StyledTabItem>
       {tabContent?.length && isOpen && (
         <StyledTabItemContentContainer>
