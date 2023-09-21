@@ -1,14 +1,16 @@
 import { AudienceGraphRow } from 'src/redux/slices/AudienceGraphSlice/types'
 
 export const AUDIENCE_DATA: AudienceGraphRow[] = [
-  { xValue: 5, yValue: 2 }, // 2 million
-  { xValue: 20, yValue: 18 }, // 18 million
-  { xValue: 35, yValue: 14 }, // 14 million
-  { xValue: 50, yValue: 8 }, // 8 million
-  { xValue: 65, yValue: 20 }, // 20 million
-  { xValue: 80, yValue: 8 }, // 8 million
-  { xValue: 95, yValue: 14 }, // 14 million
-  { xValue: 110, yValue: 2 }, // 2 million
-  { xValue: 125, yValue: 8 }, // 8 million
-  { xValue: 140, yValue: 18 }, // 18 million
+  { xValue: 5, yValue: 1 },
+  { xValue: 20, yValue: 8 },
+  { xValue: 23, yValue: 65 },
+  { xValue: 35, yValue: 3 },
+  { xValue: 50, yValue: 9 },
+  { xValue: 65, yValue: 81 },
+  { xValue: 71, yValue: 29 },
+  { xValue: 80, yValue: 30 },
+  { xValue: 95, yValue: 90 },
+  { xValue: 110, yValue: 25 },
+  { xValue: 125, yValue: 63 },
+  { xValue: 140, yValue: 28 },
 ]
