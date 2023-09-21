@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { DownArrow } from '../DownArrow'
-import { StyledDownArrowContainer } from '../LeagueDetails/styles'
+import {
+  StyledAccordion,
+  StyledDownArrowContainer,
+} from '../LeagueDetails/styles'
 import { TabProps } from '../Tabs/types'
 import { TextWithIcon } from '../TextWithIcon'
 import {
@@ -34,6 +37,8 @@ export const TabItem = (props: TabProps) => {
     onTabClick?.(id)
   }
 
+  const showTabContent = tabContent?.length && isOpen
+
   return (
     <>
       <StyledTabItem isSelected={isActive} onClick={handleClick}>
@@ -44,15 +49,17 @@ export const TabItem = (props: TabProps) => {
           </StyledDownArrowContainer>
         )}
       </StyledTabItem>
-      {tabContent?.length && isOpen && (
-        <StyledTabItemContentContainer>
-          {tabContent.map((content) => (
-            <StyledTabItemContent key={content.id}>
-              <TextWithIcon iconUrl={content.tabIcon} text={content.title} />
-            </StyledTabItemContent>
-          ))}
-        </StyledTabItemContentContainer>
-      )}
+      {
+        <StyledAccordion isHidden={!showTabContent}>
+          <StyledTabItemContentContainer>
+            {tabContent?.map((content) => (
+              <StyledTabItemContent key={content.id}>
+                <TextWithIcon iconUrl={content.tabIcon} text={content.title} />
+              </StyledTabItemContent>
+            ))}
+          </StyledTabItemContentContainer>
+        </StyledAccordion>
+      }
     </>
   )
 }

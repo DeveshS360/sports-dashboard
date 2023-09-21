@@ -6,11 +6,11 @@ import {
 } from '../LatestArticles/styles'
 import { MatchDetails } from '../MatchDetails'
 import {
+  StyledAccordion,
   StyledDownArrowContainer,
   StyledLeagueDetailsToggleSection,
   StyledLeagueImage,
   StyledLeagueMatchesContainer,
-  StyledLeagueMatchesContainerWrapper,
 } from './styles'
 import { LeagueDetailsProps } from './types'
 import { DownArrow } from '../DownArrow'
@@ -40,7 +40,7 @@ export const LeagueDetails = (props: LeagueDetailsProps) => {
         </StyledDownArrowContainer>
       </StyledLeagueDetailsToggleSection>
       {
-        <StyledLeagueMatchesContainerWrapper isHidden={isCollapsed}>
+        <StyledAccordion isHidden={isCollapsed}>
           <StyledLeagueMatchesContainer>
             {matches.map((match, idx) => (
               <MatchDetails
@@ -52,7 +52,7 @@ export const LeagueDetails = (props: LeagueDetailsProps) => {
               />
             ))}
           </StyledLeagueMatchesContainer>
-        </StyledLeagueMatchesContainerWrapper>
+        </StyledAccordion>
       }
     </>
   )

@@ -17,7 +17,7 @@ export const StyledLeagueImage = styled.img`
   border-radius: 50%;
 `
 
-export const StyledLeagueMatchesContainerWrapper = styled.div<LeagueMatchesContainerStyleProps>`
+export const StyledAccordion = styled.div<LeagueMatchesContainerStyleProps>`
   visibility: hidden;
   max-height: 0;
   opacity: 0;
