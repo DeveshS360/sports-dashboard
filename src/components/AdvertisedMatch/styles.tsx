@@ -14,8 +14,8 @@ export const StyledAdvertisedMatchContainer = styled.div`
 `
 
 export const StyledAdvertisedMatchTitle = styled.div`
-  font-size: 20px;
-  margin: 10px 0 20px 0;
+  font-size: 25px;
+  margin: 10px 0 30px 0;
   font-weight: bold;
 `
 
@@ -23,10 +23,10 @@ export const StyledAdvertisedMatchDetail = styled.div`
   display: flex;
   align-items: center;
   gap: 0 8px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   span {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: lighter;
   }
 `
@@ -41,7 +41,7 @@ export const StyledAdvertisedMatchGetTicket = styled.button`
   outline: none;
   border-radius: 10px;
   gap: 0 8px;
-  margin-top: 30px;
+  margin-top: 40px;
 `
 
 export const StyledGetTicketArrow = styled.span`
