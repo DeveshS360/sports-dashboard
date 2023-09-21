@@ -3,6 +3,7 @@ import { StyledAudienceGraphContainer } from './styles'
 import { useAppSelector } from 'src/redux/hooks'
 import { useState } from 'react'
 import { CategoricalChartState } from 'recharts/types/chart/generateCategoricalChart'
+import { FacebookFilled } from '@ant-design/icons'
 
 export const AudienceGraph = () => {
   const audienceData = useAppSelector(
@@ -57,7 +58,15 @@ export const AudienceGraph = () => {
           dot={false}
           activeDot={false}
         />
-        <Tooltip itemStyle={{ width: 1, backgroundColor: 'blue' }} />
+        <Tooltip
+          cursor={{ stroke: '#089b80', strokeWidth: 1 }}
+          offset={0}
+          content={<FacebookFilled />}
+          wrapperStyle={{
+            height: '100%',
+            left: -8,
+          }}
+        />
       </LineChart>
     </StyledAudienceGraphContainer>
   )
