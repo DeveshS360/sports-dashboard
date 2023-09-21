@@ -13,7 +13,6 @@ export const Modal = (props: ModalProps) => {
           e.stopPropagation()
         }}
       >
-        Hello World
         {children}
         <StyledClose>
           <CloseOutlined

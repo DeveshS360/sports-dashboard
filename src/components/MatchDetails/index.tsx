@@ -9,17 +9,12 @@ import {
 import { MatchDetailsProps } from '../LeagueDetails/types'
 import { useDispatch } from 'react-redux'
 import { starOrUnstarLeagueMatch } from 'src/redux/slices/SportsSlice'
-import { Modal } from '../Modal'
-import { useState } from 'react'
+import { setIsAudienceGraphOpen } from 'src/redux/slices/AudienceGraphSlice'
 
 export const MatchDetails = (
   props: MatchDetailsProps & { matchLeagueId: string; idx: number; len: number }
 ) => {
   const { teams, duration, isStarred, matchId, matchLeagueId, idx, len } = props
-
-  const [open, setOpen] = useState(false)
-  const onClose = () => setOpen(false)
-  const onOpen = () => setOpen(true)
 
   const dispatch = useDispatch()
 
@@ -62,9 +57,11 @@ export const MatchDetails = (
           </StyledMatchDetailsTeamIconContainer>
           <span>{teams?.[1]?.name}</span>
         </StyledMatchDetailsTeam>
-        <LineChartOutlined style={iconStyle} onClick={onOpen} />
+        <LineChartOutlined
+          style={iconStyle}
+          onClick={() => dispatch(setIsAudienceGraphOpen(true))}
+        />
       </StyledMatchDetailsContainer>
-      <Modal open={open} onClose={onClose} />
     </>
   )
 }

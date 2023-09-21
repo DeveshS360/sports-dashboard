@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar'
 import { SideInfo } from './components/SideInfo'
 import { StyledAppContainer } from './styles'
 import { useStorageData } from './hooks/useStorage'
+import { AudienceGraphModal } from './components/AudienceGraphModal'
 
 export const App = () => {
   const { setCachedorFetchedData } = useStorageData()
@@ -18,6 +19,7 @@ export const App = () => {
       <Navbar />
       <MainInfo />
       <SideInfo />
+      <AudienceGraphModal />
     </StyledAppContainer>
   )
 }

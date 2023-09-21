@@ -30,13 +30,12 @@ export const StyledModal = styled.div<ModalStyleProps>`
   transition: inherit;
   border-radius: 5px;
   padding: 30px;
-  background: blue;
-
+  background: #25262b;
   ${({ isOpen }) =>
     isOpen &&
     css`
       transition: inherit;
-    `}
+    `};
 `
 
 export const StyledClose = styled.button`
