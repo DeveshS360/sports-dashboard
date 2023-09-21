@@ -22,8 +22,7 @@ export const AudienceGraph = () => {
   }
 
   const ToolTipWithData = ({ payload }: { payload?: unknown }) => {
-    console.log(payload, 'checking payload of tooltip')
-    return <CustomTooltip text={payload[0]?.value} />
+    return <CustomTooltip text={`${payload[0]?.value} M`} />
   }
 
   return (
