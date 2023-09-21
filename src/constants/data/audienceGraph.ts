@@ -10,7 +10,7 @@ export const AUDIENCE_DATA: AudienceGraphRow[] = [
   { xValue: 71, yValue: 29 },
   { xValue: 80, yValue: 30 },
   { xValue: 95, yValue: 90 },
-  { xValue: 110, yValue: 25 },
-  { xValue: 125, yValue: 63 },
-  { xValue: 140, yValue: 28 },
+  { xValue: 98, yValue: 25 },
+  { xValue: 99, yValue: 63 },
+  { xValue: 100, yValue: 28 },
 ]

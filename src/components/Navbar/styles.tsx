@@ -21,6 +21,7 @@ export const StyledNavbarTitle = styled.span`
   color: var(--text-color-primary);
   font-weight: lighter;
   font-size: 20px;
+  letter-spacing: 2px;
 `
 
 export const StyledNavbarCategory = styled.div`

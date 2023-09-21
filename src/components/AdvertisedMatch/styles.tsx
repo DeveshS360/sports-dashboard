@@ -15,7 +15,7 @@ export const StyledAdvertisedMatchContainer = styled.div`
 
 export const StyledAdvertisedMatchTitle = styled.div`
   font-size: 25px;
-  margin: 10px 0 20px 0;
+  margin: 10px 0 30px 0;
   font-weight: bold;
 `
 
@@ -23,7 +23,7 @@ export const StyledAdvertisedMatchDetail = styled.div`
   display: flex;
   align-items: center;
   gap: 0 8px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   span {
     font-size: 18px;

@@ -1,4 +1,12 @@
-import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
+import {
+  CartesianGrid,
+  Label,
+  Line,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
 import { StyledAudienceGraphContainer } from './styles'
 import { useAppSelector } from 'src/redux/hooks'
 import { useState } from 'react'
@@ -25,6 +33,8 @@ export const AudienceGraph = () => {
     return <CustomTooltip text={`${payload[0]?.value} M`} />
   }
 
+  const labelStyle = { fill: 'orange' }
+
   return (
     <StyledAudienceGraphContainer>
       <LineChart
@@ -50,9 +60,24 @@ export const AudienceGraph = () => {
           tickLine={false}
           angle={-60}
           tickMargin={20}
-          height={50}
-        />
-        <YAxis dataKey="yValue" stroke="white" unit="M" tickLine={false} />
+          height={100}
+        >
+          <Label
+            value="Time duration"
+            offset={25}
+            position="insideBottom"
+            style={labelStyle}
+          />
+        </XAxis>
+        <YAxis dataKey="yValue" stroke="white" unit="M" tickLine={false}>
+          <Label
+            value="Users"
+            offset={0}
+            position="insideLeft"
+            angle={-90}
+            style={labelStyle}
+          />
+        </YAxis>
         <Line
           type="monotone"
           dataKey="yValue"
