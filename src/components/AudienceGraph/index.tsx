@@ -12,7 +12,7 @@ export const AudienceGraph = () => {
 
   const [percentage, setPercentage] = useState(0)
   const handleClick = (grapData: CategoricalChartState) => {
-    if (grapData && grapData.activePayload) {
+    if (grapData?.activePayload) {
       const hoveredX = grapData.activePayload[0].payload.xValue
       const idx = audienceData.findIndex((d) => d.xValue === hoveredX)
       const percentage = (idx * 100) / (audienceData.length - 1)
