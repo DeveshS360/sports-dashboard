@@ -30,7 +30,7 @@ export const AudienceGraph = () => {
   }
 
   const ToolTipWithData = ({ payload }: { payload?: unknown }) => {
-    return <CustomTooltip text={`${payload[0]?.value} M`} />
+    return <CustomTooltip text={`${payload[0]?.value}M`} />
   }
 
   const labelStyle = { fill: 'orange' }
