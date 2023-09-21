@@ -6,6 +6,7 @@ import {
 } from '../LatestArticles/styles'
 import { MatchDetails } from '../MatchDetails'
 import {
+  StyledAccordion,
   StyledDownArrowContainer,
   StyledLeagueDetailsToggleSection,
   StyledLeagueImage,
@@ -38,17 +39,21 @@ export const LeagueDetails = (props: LeagueDetailsProps) => {
           <DownArrow />
         </StyledDownArrowContainer>
       </StyledLeagueDetailsToggleSection>
-      {!isCollapsed && (
-        <StyledLeagueMatchesContainer>
-          {matches.map((match) => (
-            <MatchDetails
-              key={match.matchId}
-              {...match}
-              matchLeagueId={leagueId}
-            />
-          ))}
-        </StyledLeagueMatchesContainer>
-      )}
+      {
+        <StyledAccordion isHidden={isCollapsed}>
+          <StyledLeagueMatchesContainer>
+            {matches.map((match, idx) => (
+              <MatchDetails
+                len={matches.length}
+                idx={idx}
+                key={match.matchId}
+                {...match}
+                matchLeagueId={leagueId}
+              />
+            ))}
+          </StyledLeagueMatchesContainer>
+        </StyledAccordion>
+      }
     </>
   )
 }

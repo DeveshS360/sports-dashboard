@@ -1,11 +1,25 @@
-import { styled } from 'styled-components'
+import { styled, css } from 'styled-components'
 import { StyledLiveMatchScore } from '../LiveMatch/styles'
+import { MatchDetailsContainerStyleProps } from './types'
 
-export const StyledMatchDetailsContainer = styled.div`
+export const StyledMatchDetailsContainer = styled.div<MatchDetailsContainerStyleProps>`
   display: flex;
   align-items: center;
   padding: 15px;
   border-bottom: 1px solid gray;
+
+  ${({ isFirst }) =>
+    isFirst &&
+    css`
+      padding-top: 0;
+    `}
+
+  ${({ isLast }) =>
+    isLast &&
+    css`
+      padding-bottom: 0;
+      border-bottom: none;
+    `}
 
   justify-content: space-between;
 `

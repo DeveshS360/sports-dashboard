@@ -9,11 +9,12 @@ import {
 import { MatchDetailsProps } from '../LeagueDetails/types'
 import { useDispatch } from 'react-redux'
 import { starOrUnstarLeagueMatch } from 'src/redux/slices/SportsSlice'
+import { setIsAudienceGraphOpen } from 'src/redux/slices/AudienceGraphSlice'
 
 export const MatchDetails = (
-  props: MatchDetailsProps & { matchLeagueId: string }
+  props: MatchDetailsProps & { matchLeagueId: string; idx: number; len: number }
 ) => {
-  const { teams, duration, isStarred, matchId, matchLeagueId } = props
+  const { teams, duration, isStarred, matchId, matchLeagueId, idx, len } = props
 
   const dispatch = useDispatch()
 
@@ -33,29 +34,34 @@ export const MatchDetails = (
   }
 
   return (
-    <StyledMatchDetailsContainer>
-      {isStarred ? (
-        <StarFilled style={starIconStyle} onClick={handleStarClick} />
-      ) : (
-        <StarOutlined style={starIconStyle} onClick={handleStarClick} />
-      )}
-      <StyledMatchDetailsDuration>{duration}</StyledMatchDetailsDuration>
-      <StyledMatchDetailsTeam>
-        <StyledMatchDetailsTeamIconContainer>
-          <img src={teams?.[0]?.imageUrl} alt="" />
-        </StyledMatchDetailsTeamIconContainer>
-        <span>{teams?.[0]?.name}</span>
-      </StyledMatchDetailsTeam>
-      <StyledMatchScore>
-        {teams?.[0]?.score} : {teams?.[1]?.score}
-      </StyledMatchScore>
-      <StyledMatchDetailsTeam>
-        <StyledMatchDetailsTeamIconContainer>
-          <img src={teams?.[1]?.imageUrl} alt="" />
-        </StyledMatchDetailsTeamIconContainer>
-        <span>{teams?.[1]?.name}</span>
-      </StyledMatchDetailsTeam>
-      <LineChartOutlined style={iconStyle} />
-    </StyledMatchDetailsContainer>
+    <>
+      <StyledMatchDetailsContainer isFirst={idx === 0} isLast={idx === len - 1}>
+        {isStarred ? (
+          <StarFilled style={starIconStyle} onClick={handleStarClick} />
+        ) : (
+          <StarOutlined style={starIconStyle} onClick={handleStarClick} />
+        )}
+        <StyledMatchDetailsDuration>{duration}</StyledMatchDetailsDuration>
+        <StyledMatchDetailsTeam>
+          <StyledMatchDetailsTeamIconContainer>
+            <img src={teams?.[0]?.imageUrl} alt="" />
+          </StyledMatchDetailsTeamIconContainer>
+          <span>{teams?.[0]?.name}</span>
+        </StyledMatchDetailsTeam>
+        <StyledMatchScore>
+          {teams?.[0]?.score} : {teams?.[1]?.score}
+        </StyledMatchScore>
+        <StyledMatchDetailsTeam>
+          <StyledMatchDetailsTeamIconContainer>
+            <img src={teams?.[1]?.imageUrl} alt="" />
+          </StyledMatchDetailsTeamIconContainer>
+          <span>{teams?.[1]?.name}</span>
+        </StyledMatchDetailsTeam>
+        <LineChartOutlined
+          style={iconStyle}
+          onClick={() => dispatch(setIsAudienceGraphOpen(true))}
+        />
+      </StyledMatchDetailsContainer>
+    </>
   )
 }

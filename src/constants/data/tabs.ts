@@ -23,7 +23,7 @@ export const MAIN_TABS: TabsProps = {
         },
         {
           id: 'bundesliga',
-          title: 'Bundes Liga',
+          title: 'Bundesliga',
           tabIcon: bundesLigaUrl,
         },
         {
