@@ -1,6 +1,6 @@
 Receiving real time data for live match
 
-- To receive a real time data we will be using SSE ( Server Side Events ) in React
+- To receive a real time data we will be using SSE ( Server Sent Events ) in React
 - We'll be opening a connection with backend server with the following url: `${API_BASE_URL}/match-details/${liveMatchId}`
 - And after this we'll be receiving data from server continuously without creating manual request ( API polling ) 
 
