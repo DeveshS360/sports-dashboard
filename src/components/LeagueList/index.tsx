@@ -4,7 +4,7 @@ import { useAppSelector } from 'src/redux/hooks'
 
 export const LeagueList = () => {
   const leagues = useAppSelector(
-    (state) => state.sportsStore.activeSportData.leagues
+    (state) => state.sportsStore.sportsStoreData.activeSportData.leagues
   )
   return (
     <StyledMatchListContainer>

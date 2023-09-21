@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { TabsProps } from './types'
 import { TabItem } from '../TabItem'
 import { StyledTabs } from './styles'
@@ -6,6 +6,10 @@ import { StyledTabs } from './styles'
 export const Tabs = (props: TabsProps) => {
   const { defaultActiveTabId, tabs, onTabClick } = props
   const [activeTabId, setActiveTabId] = useState(defaultActiveTabId)
+
+  useEffect(() => {
+    setActiveTabId(defaultActiveTabId)
+  }, [defaultActiveTabId])
 
   return (
     <StyledTabs>

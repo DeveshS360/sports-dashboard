@@ -8,10 +8,10 @@ import { LeagueList } from '../LeagueList'
 import { useAppSelector } from 'src/redux/hooks'
 
 export const MainInfo = () => {
-  const userInfo = useAppSelector((state) => state.userStore.user)
+  const userInfo = useAppSelector((state) => state.userStore.userStoreData.user)
   const { lastName } = userInfo
   const factOfTheDay = useAppSelector(
-    (state) => state.sportsStore.activeSportData.fact
+    (state) => state.sportsStore.sportsStoreData.activeSportData.fact
   )
 
   return (

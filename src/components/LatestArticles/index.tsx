@@ -11,7 +11,7 @@ import {
 
 export const LatestArticles = () => {
   const articles = useAppSelector(
-    (state) => state.sportsStore.activeSportData.articles
+    (state) => state.sportsStore.sportsStoreData.activeSportData.articles
   )
   return (
     <StyledArticlesContainer>

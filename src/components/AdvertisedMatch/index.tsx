@@ -15,7 +15,7 @@ import { useAppSelector } from 'src/redux/hooks'
 
 export const AdvertisedMatch = () => {
   const advertisedMatchData = useAppSelector(
-    (state) => state.sportsStore.activeSportData.advertisedMatch
+    (state) => state.sportsStore.sportsStoreData.activeSportData.advertisedMatch
   )
   const { team1, team2, date, venue, versusImgUrl } = advertisedMatchData
   const iconStyle = { fontSize: 20, color: 'white' }

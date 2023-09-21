@@ -5,10 +5,12 @@ import { LiveMatchProps } from 'src/components/LiveMatch/types'
 import { TabsProps } from 'src/components/Tabs/types'
 
 export interface SportsStore {
-  activeSportData: SportData
-  tabData: TabsProps
-  sportsDetailsMap: Record<string, SportData>
-  sports: string[]
+  sportsStoreData: {
+    activeSportData: SportData
+    tabData: TabsProps
+    sportsDetailsMap: Record<string, SportData>
+    sports: string[]
+  }
 }
 
 export interface SportData {
