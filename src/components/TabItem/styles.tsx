@@ -12,7 +12,7 @@ export const StyledTabItem = styled.button<TabItemStyleProps>`
 `
 
 export const StyledTabItemContentContainer = styled.div`
-  margin-left: 20px;
+  margin: 10px 0 0 20px;
   border-left: 1px solid var(--text-color-secondary);
   display: flex;
   flex-direction: column;

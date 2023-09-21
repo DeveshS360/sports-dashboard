@@ -37,10 +37,8 @@ export const TabItem = (props: TabProps) => {
     onTabClick?.(id)
   }
 
-  const showTabContent = tabContent?.length && isOpen
-
   return (
-    <>
+    <div>
       <StyledTabItem isSelected={isActive} onClick={handleClick}>
         <TextWithIcon iconUrl={tabIcon} text={title} />
         {!!tabContent?.length && (
@@ -49,8 +47,8 @@ export const TabItem = (props: TabProps) => {
           </StyledDownArrowContainer>
         )}
       </StyledTabItem>
-      {
-        <StyledAccordion isHidden={!showTabContent}>
+      {!!tabContent?.length && (
+        <StyledAccordion isHidden={!isOpen}>
           <StyledTabItemContentContainer>
             {tabContent?.map((content) => (
               <StyledTabItemContent key={content.id}>
@@ -59,7 +57,7 @@ export const TabItem = (props: TabProps) => {
             ))}
           </StyledTabItemContentContainer>
         </StyledAccordion>
-      }
-    </>
+      )}
+    </div>
   )
 }
