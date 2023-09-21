@@ -10,6 +10,7 @@ import {
   StyledLeagueDetailsToggleSection,
   StyledLeagueImage,
   StyledLeagueMatchesContainer,
+  StyledLeagueMatchesContainerWrapper,
 } from './styles'
 import { LeagueDetailsProps } from './types'
 import { DownArrow } from '../DownArrow'
@@ -38,17 +39,21 @@ export const LeagueDetails = (props: LeagueDetailsProps) => {
           <DownArrow />
         </StyledDownArrowContainer>
       </StyledLeagueDetailsToggleSection>
-      {!isCollapsed && (
-        <StyledLeagueMatchesContainer>
-          {matches.map((match) => (
-            <MatchDetails
-              key={match.matchId}
-              {...match}
-              matchLeagueId={leagueId}
-            />
-          ))}
-        </StyledLeagueMatchesContainer>
-      )}
+      {
+        <StyledLeagueMatchesContainerWrapper isHidden={isCollapsed}>
+          <StyledLeagueMatchesContainer>
+            {matches.map((match, idx) => (
+              <MatchDetails
+                len={matches.length}
+                idx={idx}
+                key={match.matchId}
+                {...match}
+                matchLeagueId={leagueId}
+              />
+            ))}
+          </StyledLeagueMatchesContainer>
+        </StyledLeagueMatchesContainerWrapper>
+      }
     </>
   )
 }

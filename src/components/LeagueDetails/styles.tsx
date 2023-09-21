@@ -1,5 +1,8 @@
-import { styled } from 'styled-components'
-import { ArrowContainerStyleProps } from './types'
+import { styled, css } from 'styled-components'
+import {
+  ArrowContainerStyleProps,
+  LeagueMatchesContainerStyleProps,
+} from './types'
 
 export const StyledLeagueDetailsToggleSection = styled.div`
   display: flex;
@@ -14,24 +17,34 @@ export const StyledLeagueImage = styled.img`
   border-radius: 50%;
 `
 
+export const StyledLeagueMatchesContainerWrapper = styled.div<LeagueMatchesContainerStyleProps>`
+  visibility: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+
+  ${({ isHidden }) =>
+    !isHidden &&
+    css`
+      transition: all 0.5s ease-in;
+      visibility: visible;
+      max-height: 999px;
+      opacity: 1;
+      overflow: visible;
+  }
+    `}
+`
+
 export const StyledLeagueMatchesContainer = styled.div`
-  padding: 20px;
-  border-radius: var(--card-border-radius);
-  border: 1px solid gray;
   margin-top: 20px;
-
-  div:first-child {
-    padding-top: 0;
-  }
-
-  div:last-child {
-    padding-bottom: 0;
-    border-bottom: 1px none;
-  }
+  border: 1px solid gray;
+  border-radius: var(--card-border-radius);
+  padding: 20px;
 `
 
 export const StyledDownArrowContainer = styled.span<ArrowContainerStyleProps>`
   transform: ${({ isUp }) => (isUp ? 'rotate(180deg)' : 'rotate(0)')};
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
 `

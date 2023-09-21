@@ -13,9 +13,9 @@ import { Modal } from '../Modal'
 import { useState } from 'react'
 
 export const MatchDetails = (
-  props: MatchDetailsProps & { matchLeagueId: string }
+  props: MatchDetailsProps & { matchLeagueId: string; idx: number; len: number }
 ) => {
-  const { teams, duration, isStarred, matchId, matchLeagueId } = props
+  const { teams, duration, isStarred, matchId, matchLeagueId, idx, len } = props
 
   const [open, setOpen] = useState(false)
   const onClose = () => setOpen(false)
@@ -40,7 +40,7 @@ export const MatchDetails = (
 
   return (
     <>
-      <StyledMatchDetailsContainer>
+      <StyledMatchDetailsContainer isFirst={idx === 0} isLast={idx === len - 1}>
         {isStarred ? (
           <StarFilled style={starIconStyle} onClick={handleStarClick} />
         ) : (
