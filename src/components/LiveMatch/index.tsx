@@ -13,7 +13,7 @@ import {
 
 export const LiveMatch = () => {
   const liveMatchDetails = useAppSelector(
-    (state) => state.sportsStore.activeSportData.liveMatch
+    (state) => state.sportsStore.sportsStoreData.activeSportData.liveMatch
   )
 
   const { description, teams } = liveMatchDetails

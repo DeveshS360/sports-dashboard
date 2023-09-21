@@ -6,7 +6,9 @@ import { useAppSelector } from 'src/redux/hooks'
 
 export const ProfileSection = () => {
   const iconStyle = { color: 'white', fontSize: 20 }
-  const notifications = useAppSelector((state) => state.userStore.notifications)
+  const notifications = useAppSelector(
+    (state) => state.userStore.userStoreData.notifications
+  )
   return (
     <StyledProfileContainer>
       <RoundButton

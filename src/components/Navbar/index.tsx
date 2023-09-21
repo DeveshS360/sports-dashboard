@@ -15,9 +15,11 @@ import { setActiveSportsData } from 'src/redux/slices/SportsSlice'
 import callSupportIcon from 'assets/images/call-support.jpeg'
 
 export const Navbar = () => {
-  const sportsTabData = useAppSelector((state) => state.sportsStore.tabData)
+  const sportsTabData = useAppSelector(
+    (state) => state.sportsStore.sportsStoreData.tabData
+  )
   const sportsDetailMap = useAppSelector(
-    (state) => state.sportsStore.sportsDetailsMap
+    (state) => state.sportsStore.sportsStoreData.sportsDetailsMap
   )
   const dispatch = useDispatch()
   const handleTabChange = (tabName: string) => {

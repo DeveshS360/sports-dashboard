@@ -3,8 +3,10 @@ import { UserStore } from './types'
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: UserStore = {
-  user: { ...USER_INFO },
-  notifications: 4,
+  userStoreData: {
+    user: { ...USER_INFO },
+    notifications: 4,
+  },
 }
 
 export const userSlice = createSlice({
@@ -12,11 +14,18 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUserData: (state, action) => {
-      state.user = action.payload
+      state.userStoreData.user = action.payload
+    },
+    setNotifications: (state, action) => {
+      state.userStoreData.notifications = action.payload
+    },
+    setUserStoreData: (state, action) => {
+      state.userStoreData = action.payload
     },
   },
 })
 
-export const { setUserData } = userSlice.actions
+export const { setUserData, setNotifications, setUserStoreData } =
+  userSlice.actions
 
 export const userReducer = userSlice.reducer
